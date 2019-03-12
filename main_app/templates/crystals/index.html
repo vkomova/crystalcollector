@@ -5,13 +5,14 @@
 
 {% for crystal in crystals %}
     <div class="card">
-        <div class="card-content">
-            <span class="card-title">{{ crystal.name }}</span>
-            <p>Type: {{ crystal.type }}</p><br>
-            <p>Description: {{ crystal.description }}</p><br>
-            <p>Healing Properties: {{ crystal.healingproperties }}</p>
-        </div>
-    </div>
+            <div class="card-content">
+                <a href="{% url 'detail' crystal.id %}"><span class="card-title">{{ crystal.name }}</span></a>
+                <p>Type: {{ crystal.type }}</p><br>
+                <p>Description: {{ crystal.description }}</p><br>
+                <p>Healing Properties: {{ crystal.healingproperties }}</p>
+            </div>
+    </div><br>
 {% endfor %}
+<br>
 
 {% endblock %}
