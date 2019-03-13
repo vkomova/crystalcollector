@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Country List</h1>
+
+{% for country in country_list %}
+  <a href="{% url 'countries_detail' country.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ country.name }}</span>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}
