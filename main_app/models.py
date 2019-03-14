@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from datetime import date
+from django.contrib.auth.models import User
 
 USETYPE = (
     ('M', 'Mental'),
@@ -23,6 +24,7 @@ class Crystal(models.Model):
     description = models.TextField()
     healingproperties = models.TextField('Healing Properties')
     countries = models.ManyToManyField(Country)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
